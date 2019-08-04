@@ -8,6 +8,7 @@
 var Reveal = (function(){
 
 	'use strict';
+	var refreshCounter = 0;
 
 	var SLIDES_SELECTOR = '.reveal .slides section',
 		HORIZONTAL_SLIDES_SELECTOR = '.reveal .slides>section',
@@ -2165,6 +2166,7 @@ var Reveal = (function(){
 	function readURL() {
 
 		var hash = window.location.hash;
+		
 
 		// Attempt to parse the hash as either an index or name
 		var bits = hash.slice( 2 ).split( '/' ),
@@ -2174,7 +2176,7 @@ var Reveal = (function(){
 		// assume that this is a named link
 		if( isNaN( parseInt( bits[0], 10 ) ) && name.length ) {
 			// Find the slide with the specified name
-			var element = document.querySelector( '#' + name );
+			var element = document.querySelector( 'Deepak' + name );
 
 			if( element ) {
 				// Find the position of the named slide and navigate to it
@@ -2207,6 +2209,7 @@ var Reveal = (function(){
 	 */
 	function writeURL( delay ) {
 
+		
 		if( config.history ) {
 
 			// Make sure there's never more than one timeout running
@@ -2230,9 +2233,9 @@ var Reveal = (function(){
 				}
 
 				window.location.hash = url;
+				
 			}
 		}
-
 	}
 
 	/**
@@ -2454,6 +2457,7 @@ var Reveal = (function(){
 	 * Cues a new automated slide if enabled in the config.
 	 */
 	function cueAutoSlide() {
+		//window.location.reload();
 
 		cancelAutoSlide();
 
@@ -2504,6 +2508,9 @@ var Reveal = (function(){
 
 		}
 
+		// if(window.location.hash == "#/3"){
+		// 	window.location.reload();
+		// }
 	}
 
 	/**
